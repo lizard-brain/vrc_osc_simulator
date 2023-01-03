@@ -58,7 +58,7 @@ ch_1_OSC_tx = "/avatar/parameters/proximity_01" # Hard code, arduino wont be abl
 max_rx = '/avatar/parameters/max_speed'
 
 
-
+#https://fsymbols.com/generators/carty/
 print("");
 print("  ██████  ██  ██████   ██████  ██      ███████     ████████ ███████  ██████ ██   ██ ");
 print(" ██       ██ ██       ██       ██      ██             ██    ██      ██      ██   ██ ");
@@ -89,10 +89,11 @@ def ramp_climb():
    
 
 def ramp():
+    #
     
     input("Press Enter to Start Test...") 
     print("")
-
+    client.send_message(max_rx, max_speed_test/100)
     ramp_climb()  
     ramp_climb()      
     ramp_climb()      
@@ -135,7 +136,7 @@ def speed(speed):
 
 max_speed_test = int(tx_setup['max_speed'])
 
-client.send_message(max_rx, 0.5)
+#client.send_message(max_rx, max_speed_test/100)
 
 ramp()
 speed_max()
