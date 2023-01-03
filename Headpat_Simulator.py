@@ -93,7 +93,7 @@ def ramp():
     
     input("Press Enter to Start Test...") 
     print("")
-    client.send_message(max_rx, max_speed_test/100)
+    
     ramp_climb()  
     ramp_climb()      
     ramp_climb()      
@@ -137,7 +137,7 @@ def speed(speed):
 max_speed_test = int(tx_setup['max_speed'])
 
 #client.send_message(max_rx, max_speed_test/100)
-
+client.send_message(max_rx, max_speed_test/100)
 ramp()
 speed_max()
 ramp()
